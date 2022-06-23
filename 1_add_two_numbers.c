@@ -9,7 +9,7 @@ int main()
     scanf("%d", &n1);
     printf("Enter Number 2 to be added: ");
     scanf("%d", &n2);
-    printf("Sum of %d and %d = %d\n",n1, n2, n1+n2);
+    printf("%d + %d = %d\n",n1, n2, n1+n2);
     return 0;
 }
   
