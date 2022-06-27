@@ -21,7 +21,7 @@ int addition(int num1, int num2)
     return(num1+num2);
 }
 
-int output(int num1, int num2, int sum)
+void output(int num1, int num2, int sum)
 {
     printf("%d+%d=%d", num1, num2, sum);
 }
