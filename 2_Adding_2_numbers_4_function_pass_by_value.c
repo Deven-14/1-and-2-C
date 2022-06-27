@@ -2,7 +2,8 @@
 
 int input()
 {
-    scanf("%d", &a);
+    int num;
+    scanf("%d", &num);
 }
 
 int addition(int num1, int num2)
