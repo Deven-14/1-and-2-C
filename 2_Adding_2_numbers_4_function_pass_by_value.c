@@ -7,12 +7,12 @@ int input()
     return num;
 }
 
-int prompt1()
+int requesting_input_for_num1()
 {  
     printf("Enter number 1 to be added: ");
 }
 
-int prompt2()
+int requesting_input_for_num2()
 {  
     printf("Enter number 2 to be added: ");
 }
@@ -30,9 +30,9 @@ int output(int num1, int num2, int sum)
 int main()
 {
     int num1, num2, sum;
-    prompt1();
+    requesting_input_for_num1();
     num1=input();
-    prompt2();
+    requesting_input_for_num2();
     num2=input();
     sum= addition(num1, num2);
     output(num1, num2, sum);
