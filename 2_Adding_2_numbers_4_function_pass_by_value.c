@@ -4,15 +4,10 @@ int input_num(int ith_num)
 {
     int num;
     if(ith_num == 1)
-    {
         printf("Enter number 1 to be added: ");
-        scanf("%d", &num);
-    }
     else if(ith_num == 2)
-    {
         printf("Enter number 2 to be added: ");
-        scanf("%d", &num);
-    }        
+    scanf("%d", &num);
     return num;
 }
 
