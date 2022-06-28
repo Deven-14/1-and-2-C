@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int input_num(int ith_num)
+int input_ith_num(int ith_num)
 {
     int num;
     if(ith_num == 1)
@@ -24,8 +24,8 @@ void output(int num1, int num2, int sum)
 int main()
 {
     int num1, num2, sum;
-    num1=input_num(1);
-    num2=input_num(2);
+    num1=input_ith_num(1);
+    num2=input_ith_num(2);
     sum=addition(num1, num2);
     output(num1, num2, sum);
     return 0;
