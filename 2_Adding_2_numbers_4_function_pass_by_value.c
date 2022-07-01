@@ -1,14 +1,15 @@
 #include<stdio.h>
 
-int input_ith_num(int ith_num)
+int num1, num2;
+
+int input_num1_and_num2()
 {
-    int num;
-    if(ith_num == 1)
-        printf("Enter number 1 to be added: ");
-    else if(ith_num == 2)
-        printf("Enter number 2 to be added: ");
-    scanf("%d", &num);
-    return num;
+    
+    printf("Enter number 1 to be added: ");
+    scanf("%d", &num1);
+    printf("Enter number 2 to be added: ");
+    scanf("%d", &num2);
+    
 }
 
 int addition(int num1, int num2)
@@ -23,9 +24,8 @@ void output(int num1, int num2, int sum)
 
 int main()
 {
-    int num1, num2, sum;
-    num1=input_ith_num(1);
-    num2=input_ith_num(2);
+    int sum;
+    input_num1_and_num2();
     sum=addition(num1, num2);
     output(num1, num2, sum);
     return 0;
