@@ -1,11 +1,11 @@
 #include<stdio.h>
 
-int input_2_integers_to_be_added(int *num1, int *num2)
+int input_2_integers_to_be_added(int *num1_ptr, int *num2_ptr)
 {
     printf("Enter number 1 to be added: ");
-    scanf("%d", num1);
+    scanf("%d", num1_ptr);
     printf("Enter number 2 to be added: ");
-    scanf("%d", num2);
+    scanf("%d", num2_ptr);
 }
 
 int add(int num1, int num2)
