@@ -3,9 +3,9 @@
 int input_num1_num2(int *num1, int *num2)
 {
     printf("Enter number 1 to be added: ");
-    scanf("%d", &num1);
+    scanf("%d", num1);
     printf("Eneter number 2 to be added: ");
-    scanf("%d", &num2);
+    scanf("%d", num2);
 }
 
 int add(int *num1, int *num2)
