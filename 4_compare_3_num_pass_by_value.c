@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int input_ith_num(int ith_num)
 {
