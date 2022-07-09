@@ -8,7 +8,7 @@ int input_ith_num(int ith_num)
 	return num;
 }
 
-int compare(int num1, int num2, int num3)
+int max(int num1, int num2, int num3)
 {
 	if(num1>num2 && num1>num3)
 		return num1;
@@ -29,6 +29,6 @@ int main()
 	num1=input_ith_num(1);
 	num2=input_ith_num(2);
 	num3=input_ith_num(3);
-	max_num=compare(num1, num2, num3);
+	max_num=max(num1, num2, num3);
 	output(max_num);
 }
