@@ -22,7 +22,7 @@ int max(int num1, int num2, int num3)
 
 void output(int max_num)
 {
-    printf("The largest number is %d.\n");
+    printf("The largest number is %d.\n", max_num);
 }
 
 int main()
