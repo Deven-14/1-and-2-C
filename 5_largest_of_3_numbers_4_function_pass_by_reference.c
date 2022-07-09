@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int input(int *num1_ptr, int *num2_ptr, int *num3_ptr)
+int input_3_numbers(int *num1_ptr, int *num2_ptr, int *num3_ptr)
 {
     printf("Enter number 1 to find the largest of 3 numbers: ");
     scanf("%d", num1_ptr);
@@ -28,7 +28,7 @@ void output(int max_num)
 int main()
 {
     int num1, num2, num3, max_num;
-    input(&num1, &num2, &num3);
+    input_3_numbers(&num1, &num2, &num3);
     max_num=max(num1, num2, num3);
     output(max_num);
     return 0;
