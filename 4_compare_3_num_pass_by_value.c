@@ -3,7 +3,7 @@
 int input_ith_num(int ith_num)
 {
 	int num;
-	printf("Enter the %dth number: ", ith_num);
+	printf("Enter number %d to find the largest of 3 numbers: ", ith_num);
 	scanf("%d", &num);
 	return num;
 }
