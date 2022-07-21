@@ -10,7 +10,7 @@ int input_nth_number()
 
 int sum_of_n_numbers(int nth_num)
 {
-    return (nth_num*(nth_num+1)/2)
+    return (nth_num*(nth_num+1)/2);
 }
 
 void output(int nth_num, int sum)
