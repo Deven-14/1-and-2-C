@@ -14,7 +14,7 @@ int input_n_numbers(int n, int a[n])
     for(int i=0; i<n; i++)
     {
         printf("Enter the %dth number: ", i+1);
-        scanf("%d", a[i]);
+        scanf("%d", &a[i]);
     }
 }
 
