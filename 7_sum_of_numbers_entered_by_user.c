@@ -8,7 +8,7 @@ int input_number_of_nos()
     return n;
 }
 
-int input_n_numbers(int *a[n])
+int input_n_numbers(int n, int a[n])
 {   
     
     for(int i=0; i<n; i++)
@@ -38,8 +38,8 @@ int main()
     int n, sum;
     n=input_number_of_nos();
     int a[n];
-    input_n_numbers(&a[n]);
-    sum=sum_of_n_numbers(n, a[n]);
+    input_n_numbers(n, a);
+    sum=sum_of_n_numbers(n, a);
     output_sum(sum);
     return 0;
 }
