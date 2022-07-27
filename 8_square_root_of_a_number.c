@@ -16,7 +16,7 @@ int square_root(int num)
 
 void output_square_root_of_num(int num, float sq_root_of_num)
 {
-    printf("Square root of %d is %d", num, sq_root_of_num);
+    printf("Square root of %d is %f", num, sq_root_of_num);
 }
 
 int main()
