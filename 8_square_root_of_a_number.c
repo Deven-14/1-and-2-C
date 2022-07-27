@@ -24,6 +24,6 @@ int main()
     int num, root;
     num=input_num();
     root=square_root(num);
-    outpur_root(num, root);
+    output_root(num, root);
     return 0;
 }
