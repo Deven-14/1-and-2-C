@@ -1,12 +1,12 @@
 #include<stdio.h>
 #include<string.h>
 
-char input_string(int ith_string)
+char input_strings(char *str1, char *str2)
 {
-    char str[20];
-    printf("Enter string %d for comparison: ", ith_string);
-    gets(str);
-    return str;
+    printf("Enter string 1 for comparison: ");
+    scanf("%s", str1);
+    printf("Enter string 2 for comparison: ");
+    scanf("%s", str2);
 }
 
 int compare_strings(char str1[], char str2[])
@@ -41,8 +41,8 @@ void output(int result)
 
 int main()
 {
-    char str1[20]=input_string(1);
-    char str2[20]=input_string(2);
+    char str1[20], str2[20];
+    input_strings(str1, str2);
     int result=compare_strings(str1, str2);
     output(result);
     return 0;
