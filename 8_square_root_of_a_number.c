@@ -21,10 +21,8 @@ void output_square_root_of_num(int num, float sq_root_of_num)
 
 int main()
 {
-    int num;
-    float sq_root_of_num;
-    num=input_num();
-    sq_root_of_num=square_root(num);
+    int num=input_num();
+    float sq_root_of_num=square_root(num);
     output_square_root_of_num(num, sq_root_of_num);
     return 0;
 }
