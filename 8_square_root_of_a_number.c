@@ -9,7 +9,7 @@ int input_num()
     return num;
 }
 
-int square_root(int num)
+float square_root(int num)
 {
     return(sqrt(num));
 }    
