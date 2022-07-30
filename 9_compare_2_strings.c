@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<string.h>
 
-char input_strings(char *str1, char *str2)
+void input_strings(char *str1, char *str2)
 {
     printf("Enter string 1 for comparison: ");
     scanf("%s", str1);
