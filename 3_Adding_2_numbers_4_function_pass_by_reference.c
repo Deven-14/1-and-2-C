@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int input_2_integers_to_be_added(int *num1_ptr, int *num2_ptr)
+void input_2_integers_to_be_added(int *num1_ptr, int *num2_ptr)
 {
     printf("Enter number 1 to be added: ");
     scanf("%d", num1_ptr);
