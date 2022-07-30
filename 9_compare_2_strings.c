@@ -17,10 +17,10 @@ int compare_strings(char str1[], char str2[])
 
 void output(int result)
 {
-    if(result)
-        printf("The strings are unequal\n");
-    else
+    if(result==0)
         printf("The strings are equal\n");
+    else
+        printf("The strings are unequal\n");
 }
 
 int main()
