@@ -5,7 +5,7 @@ struct complex
     float real, imag;
 };
 
-typedef struct complex Complex
+typedef struct complex Complex;
 
 Complex input_ith_complex_num(int ith_num)
 {
