@@ -5,7 +5,7 @@ struct complex
     int real, imag;
 };
 
-int input_complex_num(int ith_num)
+struct input_complex_num(int ith_num)
 {
     struct complex num;
     printf("Enter real part of complex number %d: ", ith_num);
@@ -15,7 +15,7 @@ int input_complex_num(int ith_num)
     return num;
 }
 
-int addition(struct complex num1, struct complex num2)
+struct addition(struct complex num1, struct complex num2)
 {
     struct complex sum;
     sum.real= num1.real + num2.real;
