@@ -5,7 +5,9 @@ struct complex
     float real, imag;
 };
 
-struct complex input_ith_complex_num(int ith_num)
+typedef struct complex Complex
+
+Complex input_ith_complex_num(int ith_num)
 {
     struct complex num;
     printf("Enter real part of complex number %d: ", ith_num);
@@ -15,7 +17,7 @@ struct complex input_ith_complex_num(int ith_num)
     return num;
 }
 
-struct complex addition(struct complex num1, struct complex num2)
+Complex addition(Complex num1, Complex num2)
 {
     struct complex sum;
     sum.real= num1.real + num2.real;
@@ -23,14 +25,14 @@ struct complex addition(struct complex num1, struct complex num2)
     return sum;
 }
 
-void output(struct complex sum)
+void output(Complex sum)
 {
     printf("Sum of the entered complex numbers is %f + i%f\n", sum.real, sum.imag);
 }
 
 int main()
 {
-    struct complex sum, num1, num2;
+    Complex sum, num1, num2;
     num1=input_ith_complex_num(1);
     num2=input_ith_complex_num(2);
     sum=addition(num1, num2);
