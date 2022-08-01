@@ -2,10 +2,10 @@
 
 struct complex
 {
-    int real, imag;
+    float real, imag;
 };
 
-struct complex input_complex_num(int ith_num)
+struct complex input_ith_complex_num(int ith_num)
 {
     struct complex num;
     printf("Enter real part of complex number %d: ", ith_num);
