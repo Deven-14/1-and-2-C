@@ -3,7 +3,7 @@
 struct complex
 {
     int real, imag;
-}
+};
 
 int input_complex_num(int ith_num)
 {
