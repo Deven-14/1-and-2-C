@@ -31,8 +31,8 @@ void output(struct complex sum)
 int main()
 {
     struct complex sum, num1, num2;
-    num1=input_complex_num(1);
-    num2=input_complex_num(2);
+    num1=input_ith_complex_num(1);
+    num2=input_ith_complex_num(2);
     sum=addition(num1, num2);
     output(sum);
     return 0;
