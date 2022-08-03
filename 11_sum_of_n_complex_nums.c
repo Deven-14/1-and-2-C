@@ -41,7 +41,7 @@ Complex addition(int n, Complex *num)
 
 void output(int n, Complex sum)
 {
-    printf("Sum of entered %d complex numbers is %d + i%d\n", n, sum.real, sum.imag);
+    printf("Sum of entered %d complex numbers is %f + i%f\n", n, sum.real, sum.imag);
 }
 
 int main()
