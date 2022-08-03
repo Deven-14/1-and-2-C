@@ -20,9 +20,9 @@ void input_ith_complex_num(int n, Complex *num)
     for(int i=1; i<=n; i++)
     { 
         printf("Enter the real part of the %dth complex number: ", n);
-        scanf("%f", num[i].real);
+        scanf("%lf", num[i].real);
         printf("Enter the imaginary part of the %dth complex number: ", n);
-        scanf("%f", num[i].imag);
+        scanf("%lf", num[i].imag);
     }
 }
 
