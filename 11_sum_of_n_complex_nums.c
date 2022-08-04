@@ -46,12 +46,10 @@ void output(int n, Complex sum)
 
 int main()
 {
-    Complex sum;
-    int n, i;
-    n=input_number_of_comples_nos();
+    int n=input_number_of_comples_nos();
     Complex nums[n];
     input_n_complex_nums(n, nums);
-    sum=addition(n, nums);
+    Complex sum=addition(n, nums);
     output(n, sum);
     return 0;
 }
