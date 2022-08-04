@@ -17,11 +17,11 @@ typedef struct complex Complex;
 
 void input_n_complex_nums(int n, Complex *nums)
 {  
-    for(int i=1; i<=n; i++)
+    for(int i=0; i<n; i++)
     { 
-        printf("Enter the real part of the %dth complex number: ", i);
+        printf("Enter the real part of the %dth complex number: ", i+1);
         scanf("%f", &nums[i].real);
-        printf("Enter the imaginary part of the %dth complex number: ", i);
+        printf("Enter the imaginary part of the %dth complex number: ", i+1);
         scanf("%f", &nums[i].imag);
     }
 }
@@ -31,7 +31,7 @@ Complex addition(int n, Complex *nums)
     Complex sum;
     sum.real=0;
     sum.imag=0;
-    for(int  i=1; i<=n; i++)
+    for(int  i=0; i<n; i++)
     {
         sum.real+=nums[i].real;
         sum.imag+=nums[i].imag;
