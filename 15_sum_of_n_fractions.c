@@ -26,11 +26,11 @@ void input_n_fractions(int n, Fraction *f)
     }
 }
 
-float addition(Fraction *f)
+float addition(int n, Fraction *f)
 {
     float sum=0;
     for(int j=0; j<n; j++)
-        sum+= f[i].nume/f[i].deno;
+        sum+= f[j].nume/f[j].deno;
     return sum;
 }
 
@@ -44,7 +44,7 @@ int main()
     int n= input_number_of_fractions();
     Fraction f[n];
     input_n_fractions(n, f);
-    float sum= addition(f);
+    float sum= addition(n, f);
     output(n, sum);
     return 0;
 }
