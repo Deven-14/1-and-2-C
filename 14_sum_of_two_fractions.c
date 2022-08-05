@@ -33,6 +33,6 @@ int main()
     float nume2= input_numerator_of_ith_fraction(2);
     float deno2= input_denominator_of_ith_fraction(2);
     float sum= addition(nume1, deno1, nume2, deno2);
-    output(nume1, deno1, nume2, deno2);
+    output(nume1, deno1, nume2, deno2, sum);
     return 0;
 }
