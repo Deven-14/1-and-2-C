@@ -5,7 +5,7 @@ struct fraction
     float nume, deno;
 };
 
-typedef struct fraction Fraction
+typedef struct fraction Fraction;
 
 int input_number_of_fractions()
 {
