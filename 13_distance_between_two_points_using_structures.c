@@ -11,8 +11,8 @@ typedef struct point Point;
 Point input_co_cordinates_of_ith_point(int ith_point)
 {
     Point p;
-    printf("Enter the x co-ordinate of the point %d: ", ith_point):
-    scanf("%d", &p.x;);
+    printf("Enter the x co-ordinate of the point %d: ", ith_point);
+    scanf("%d", &p.x);
     printf("Enter the y co-ordinate of the point %d: ", ith_point);
     scanf("%d", &p.y);
     return p;
