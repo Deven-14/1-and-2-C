@@ -19,7 +19,7 @@ int input_y_co_ordinate_of_ith_point(int ith_point)
 
 float distance_formula(int x1, int y1, int x2, int y2)
 {
-    return(sqrt(pow((x2-x1), 2)+pow((y2-y1), 2)))
+    return(sqrt(pow((x2-x1), 2)+pow((y2-y1), 2)));
 }
 
 void output(float distance)
