@@ -16,7 +16,7 @@ float input_denominator_of_ith_fraction(int ith_fraction)
     return deno;
 }
 
-float addition(nume1, deno1, nume2, deno2)
+float addition(float nume1, float deno1, float nume2, float deno2)
 {
     return((nume1/deno1)+(nume2/deno2));
 }
