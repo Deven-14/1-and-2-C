@@ -22,9 +22,9 @@ float distance_formula(int x1, int y1, int x2, int y2)
     return(sqrt(pow((x2-x1), 2)+pow((y2-y1), 2)));
 }
 
-void output(float distance)
+void output(int x1, int y1, int x2, int y2, float distance)
 {
-    printf("Distance between the points is %f\n", distance);    
+    printf("Distance between the points (%d, %d) and (%d, %d) is %f\n", x1, y1, x2, y2, distance);    
 }    
 
 int main()
@@ -34,6 +34,6 @@ int main()
     int x2= input_x_co_ordinate_of_ith_point(2);
     int y2= input_y_co_ordinate_of_ith_point(2);
     float distance= distance_formula(x1, y1, x2, y2);
-    output(distance);
+    output(x1, y1, x2, y2, distance);
     return 0;
 }
