@@ -30,7 +30,7 @@ Fraction addition(Fraction f1, Fraction f2)
     int lcm =(f1.denum*f2.denum)/(gcd(f1.denum, f2.denum));
     Fraction sum;
     sum.denum = lcm;
-    sum.num = (f1.num*lcm)f1.denum + (f2.num*lcm)/f2.denum;
+    sum.num = (f1.num*lcm)/f1.denum + (f2.num*lcm)/f2.denum;
     return sum;
 }
 
