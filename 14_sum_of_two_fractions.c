@@ -1,38 +1,49 @@
 #include<stdio.h>
 
-float input_numerator_of_ith_fraction(int ith_fraction)
+struct fraction
 {
-    float nume;
+    int num, denum;
+};
+
+typedef struct fraction Fraction;
+
+int gcd(int m, int n)
+{
+    if(n==0)
+        return m;
+    else
+        return gcd(n , m%n);
+}
+
+Fraction input_ith_fraction(int ith_fraction)
+{
+    Fraction f;
     printf("Enter the numerator of fraction %d : ", ith_fraction);
-    scanf("%f", &nume);
-    return nume;
-}
-
-float input_denominator_of_ith_fraction(int ith_fraction)
-{
-    float deno;
+    scanf("%d", &f.num);
     printf("Enter the denominator of fraction %d : ", ith_fraction);
-    scanf("%f", &deno);
-    return deno;
+    scanf("%d", &f.denum);
+    return f;
 }
 
-float addition(float nume1, float deno1, float nume2, float deno2)
+Fraction addition(Fraction f1, Fraction f2)
 {
-    return((nume1/deno1)+(nume2/deno2));
+    int lcm =(f1.denum*f2.denum)/(gcd(f1.denum, f2.denum));
+    Fraction sum;
+    sum.denum = lcm;
+    sum.num = (f1.num*f2.denum/lcm) + (f2.num*f1.denum/lcm);
+    return sum;
 }
 
-void output(float nume1, float deno1, float nume2, float deno2, float sum)
+void output(Fraction f1, Fraction f2, Fraction sum)
 {
-    printf("%f/%f + %f/%f = %f", nume1, deno1, nume2, deno2, sum);
+    printf("%d/%d + %d/%d = %d/%d", f1.num, f1.denum, f2.num, f2.denum, sum.num, sum.denum);
 }
 
 int main()
 {
-    float nume1= input_numerator_of_ith_fraction(1);
-    float deno1= input_denominator_of_ith_fraction(1);
-    float nume2= input_numerator_of_ith_fraction(2);
-    float deno2= input_denominator_of_ith_fraction(2);
-    float sum= addition(nume1, deno1, nume2, deno2);
-    output(nume1, deno1, nume2, deno2, sum);
+    Fraction f1 = input_ith_fraction(1);
+    Fraction f2 = input_ith_fraction(2);
+    Fraction sum = addition(f1, f2);
+    output(f1, f2, sum);
     return 0;
 }
