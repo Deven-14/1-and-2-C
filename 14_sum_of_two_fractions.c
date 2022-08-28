@@ -9,10 +9,13 @@ typedef struct fraction Fraction;
 
 int gcd(int m, int n)
 {
-    if(n==0)
-        return m;
-    else
-        return gcd(n , m%n);
+    while(n!=0)
+    {
+        int rem = m%n;
+        m=n;
+        n=rem;
+    }
+    return m;
 }
 
 Fraction input_ith_fraction(int ith_fraction)
