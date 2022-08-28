@@ -31,12 +31,15 @@ Fraction addition(Fraction f1, Fraction f2)
     Fraction sum;
     sum.denum = lcm;
     sum.num = (f1.num*lcm)/f1.denum + (f2.num*lcm)/f2.denum;
+    int fake_num = sum.num/gcd(sum.num, sum.denum);
+    sum.denum = sum.denum/gcd(sum.num, sum.denum);
+    sum.num = fake_num;
     return sum;
 }
 
 void output(Fraction f1, Fraction f2, Fraction sum)
 {
-    printf("%d/%d + %d/%d = %d/%d", f1.num, f1.denum, f2.num, f2.denum, sum.num/gcd(sum.num, sum.denum), sum.denum/gcd(sum.num, sum.denum));
+    printf("%d/%d + %d/%d = %d/%d", f1.num, f1.denum, f2.num, f2.denum, sum.num, sum.denum);
 }
 
 int main()
