@@ -30,10 +30,15 @@ Fraction addition(Fraction f1, Fraction f2)
     Fraction sum;
     sum.denum = f1.denum*f2.denum;
     sum.num = (f1.num*f2.denum) + (f2.num*f1.denum);
-    int divisor = gcd(sum.num, sum.denum);
-    sum.num/= divisor;
-    sum.denum/= divisor;
     return sum;
+}
+
+Fraction simplifyraction(Fraction fract)
+{
+    int divisor = gcd(fract.num, fract.denum);
+    fract.num/= divisor;
+    fract.denum/= divisor;
+    return fract;
 }
 
 void output(Fraction f1, Fraction f2, Fraction sum)
@@ -46,6 +51,7 @@ int main()
     Fraction f1 = input_ith_fraction(1);
     Fraction f2 = input_ith_fraction(2);
     Fraction sum = addition(f1, f2);
+    sum = simplifyraction(sum);
     output(f1, f2, sum);
     return 0;
 }
