@@ -2,7 +2,7 @@
 
 struct fraction
 {
-    float nume, deno;
+    float num, denum;
 };
 
 typedef struct fraction Fraction;
@@ -19,24 +19,33 @@ void input_n_fractions(int n, Fraction *f)
 {
     for(int i=0; i<n; i++)
     {
-        printf("Enter the numerator of fraction %d", i+1);
-        scanf("%f", &f[i].nume);
-        printf("Enter the denominatorof fraction %d", i+1);
-        scanf("%f", &f[i].deno);
+        printf("Enter the numerator of fraction %d: ", i+1);
+        scanf("%f", &f[i].num);
+        printf("Enter the denominatorof fraction %d: ", i+1);
+        scanf("%f", &f[i].denum);
     }
 }
 
-float addition(int n, Fraction *f)
+Fraction addition(int n, Fraction *f)
 {
-    float sum=0;
-    for(int j=0; j<n; j++)
-        sum+= f[j].nume/f[j].deno;
+    Fraction sum;
+    int lcm = (f[0].denum*f[1].denum)/gcd(f[0].denum, f[1].denum);
+    sum.denum=lcm;
+    sum.num = (f[0].num*lcm)/f[0].denum + (f[1].num*lcm)/f[1].denum;
+    for(int i=2; i<n; i++)
+    {
+        lcm = (f[i].denum*sum.denum)/gcd(f[i].denum, sum.denum);
+        sum.denum = lcm;
+        sum.num = (f[i].num*lcm)/f[i].denum + (sum.sum*lcm)/sum.denum;
+    }
     return sum;
 }
 
-void output(int n, float sum)
+void output(int n, Fraction *f, float sum)
 {
-    printf("Sum of entered %d fractions is %f\n", n, sum);
+    for(int i=0; i<n; i++)
+        printf("+ %d/%d ", f[i].num, f[i].denum);
+    printf(" = %d/%d\n", sum.num, sum.denum);
 }
 
 int main()
@@ -45,6 +54,6 @@ int main()
     Fraction f[n];
     input_n_fractions(n, f);
     float sum= addition(n, f);
-    output(n, sum);
+    output(n, f, sum);
     return 0;
 }
