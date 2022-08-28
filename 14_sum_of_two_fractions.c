@@ -7,13 +7,13 @@ struct fraction
 
 typedef struct fraction Fraction;
 
-int gcd(int m, int n)
-{
-    if(n==0)
-        return m;
-    else
-        return gcd(n , m%n);
-}
+// int gcd(int m, int n)
+// {
+//     if(n==0)
+//         return m;
+//     else
+//         return gcd(n , m%n);
+// }
 
 Fraction input_ith_fraction(int ith_fraction)
 {
@@ -27,13 +27,9 @@ Fraction input_ith_fraction(int ith_fraction)
 
 Fraction addition(Fraction f1, Fraction f2)
 {
-    int lcm =(f1.denum*f2.denum)/(gcd(f1.denum, f2.denum));
     Fraction sum;
-    sum.denum = lcm;
-    sum.num = (f1.num*lcm)/f1.denum + (f2.num*lcm)/f2.denum;
-    int fake_num = sum.num/gcd(sum.num, sum.denum);
-    sum.denum = sum.denum/gcd(sum.num, sum.denum);
-    sum.num = fake_num;
+    sum.denum = f1.denum*f2.denum;
+    sum.num = (f1.num*f2.denum) + (f2.num*f1.denum);
     return sum;
 }
 
