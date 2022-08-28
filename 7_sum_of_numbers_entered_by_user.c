@@ -13,7 +13,7 @@ int input_n_numbers(int n, int a[n])
     
     for(int i=0; i<n; i++)
     {
-        printf("Enter the %dth number: ", i+1);
+        printf("Enter the number %d: ", i+1);
         scanf("%d", &a[i]);
     }
 }
@@ -28,9 +28,11 @@ int sum_of_n_numbers(int n, int a[n])
     return sum;
 }
 
-void output_sum(int sum)
+void output_sum(int n, int a[n], int sum)
 {
-    printf("Sum of entered n numbers is %d.\n", sum);
+    for(int i =0; i<n; i++)
+        printf(" + %d", a[i]);
+    printf(" = %d", sum);
 }
 
 int main()
@@ -40,7 +42,7 @@ int main()
     int a[n];
     input_n_numbers(n, a);
     sum=sum_of_n_numbers(n, a);
-    output_sum(sum);
+    output_sum(n, a, sum);
     return 0;
 }
     
