@@ -33,7 +33,7 @@ Fraction addition(Fraction f1, Fraction f2)
     return sum;
 }
 
-Fraction simplifyraction(Fraction fract)
+Fraction simplify_fraction(Fraction fract)
 {
     int divisor = gcd(fract.num, fract.denum);
     fract.num/= divisor;
@@ -51,7 +51,7 @@ int main()
     Fraction f1 = input_ith_fraction(1);
     Fraction f2 = input_ith_fraction(2);
     Fraction sum = addition(f1, f2);
-    sum = simplifyraction(sum);
+    sum = simplify_fraction(sum);
     output(f1, f2, sum);
     return 0;
 }
