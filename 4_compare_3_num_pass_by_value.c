@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-int input_ith_num(int ith_num, char ordinal[3])
+int input_ith_num(char ith_num[4])
 {
 	int num;
-	printf("Enter %d%s number to find the largest of 3 numbers: ", ith_num, ordinal);
+	printf("Enter %s number to find the largest of 3 numbers: ", ith_num);
 	scanf("%d", &num);
 	return num;
 }
@@ -26,9 +26,9 @@ void output(int max_num)
 int main()
 {
 	int num1, num2, num3, max_num;
-	num1=input_ith_num(1, "st");
-	num2=input_ith_num(2, "nd");
-	num3=input_ith_num(3, "rd");
+	num1=input_ith_num("1st");
+	num2=input_ith_num("2nd");
+	num3=input_ith_num("3rd");
 	max_num=max(num1, num2, num3);
 	output(max_num);
 }
