@@ -7,12 +7,12 @@ struct complex
 
 typedef struct complex Complex;
 
-Complex input_ith_complex_num(int ith_num)
+Complex input_ith_complex_num(int ith_num, char ordinal[3])
 {
     struct complex num;
-    printf("Enter real part of complex number %d: ", ith_num);
+    printf("Enter real part of %d%s complex number: ", ith_num, ordinal);
     scanf("%f", &num.real);
-    printf("Enter the imaginary part of complex number %d: ", ith_num);
+    printf("Enter the imaginary part of %d%s complex number: ", ith_num, ordinal);
     scanf("%f", &num.imag);
     return num;
 }
@@ -33,8 +33,8 @@ void output(Complex sum)
 int main()
 {
     Complex sum, num1, num2;
-    num1=input_ith_complex_num(1);
-    num2=input_ith_complex_num(2);
+    num1=input_ith_complex_num(1, "st");
+    num2=input_ith_complex_num(2, "nd");
     sum=addition(num1, num2);
     output(sum);
     return 0;
