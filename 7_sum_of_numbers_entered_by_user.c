@@ -30,9 +30,9 @@ int sum_of_n_numbers(int n, int a[n])
 
 void output_sum(int n, int a[n], int sum)
 {
-    for(int i =0; i<n; i++)
-        printf(" + %d", a[i]);
-    printf(" = %d", sum);
+    for(int i =0; i<n-1; i++)
+        printf("%d + ", a[i]);
+    printf("%d = %d", a[n], sum);
 }
 
 int main()
