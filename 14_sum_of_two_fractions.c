@@ -18,12 +18,12 @@ int gcd(int m, int n)
     return m;
 }
 
-Fraction input_ith_fraction(int ith_fraction)
+Fraction input_ith_fraction(int ith_fraction, char ordinal[3])
 {
     Fraction f;
-    printf("Enter the numerator of fraction %d : ", ith_fraction);
+    printf("Enter the numerator of %d%s fraction: ", ith_fraction, ordinal);
     scanf("%d", &f.num);
-    printf("Enter the denominator of fraction %d : ", ith_fraction);
+    printf("Enter the denominator of %d%s fraction: ", ith_fraction, ordinal);
     scanf("%d", &f.denum);
     return f;
 }
@@ -52,8 +52,8 @@ void output(Fraction f1, Fraction f2, Fraction sum)
 
 int main()
 {
-    Fraction f1 = input_ith_fraction(1);
-    Fraction f2 = input_ith_fraction(2);
+    Fraction f1 = input_ith_fraction(1, "st");
+    Fraction f2 = input_ith_fraction(2, "nd");
     Fraction sum = addition(f1, f2);
     output(f1, f2, sum);
     return 0;
