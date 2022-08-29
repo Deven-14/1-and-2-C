@@ -2,9 +2,9 @@
 
 void input_2_integers_to_be_added(int *num1_ptr, int *num2_ptr)
 {
-    printf("Enter number 1 to be added: ");
+    printf("Enter 1st number to be added: ");
     scanf("%d", num1_ptr);
-    printf("Enter number 2 to be added: ");
+    printf("Enter 2nd number to be added: ");
     scanf("%d", num2_ptr);
 }
 
