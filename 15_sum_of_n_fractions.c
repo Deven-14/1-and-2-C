@@ -29,7 +29,7 @@ void input_n_fractions(int n, Fraction *f)
     {
         printf("Enter the numerator of fraction %d: ", i+1);
         scanf("%d", &f[i].num);
-        printf("Enter the denominatorof fraction %d: ", i+1);
+        printf("Enter the denominator of fraction %d: ", i+1);
         scanf("%d", &f[i].denum);
     }
 }
@@ -52,7 +52,7 @@ Fraction addition(int n, Fraction *f)
         sum.num = f[i].num*sum.denum + sum.num*f[i].denum;
         sum.denum = sum.denum*f[i].denum;
     }
-    simplify_fraction(sum);
+    sum = simplify_fraction(sum);
     return sum;
 }
 
