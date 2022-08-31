@@ -28,9 +28,9 @@ void input_n_fractions(int n, Fraction *f)
     for(int i=0; i<n; i++)
     {
         printf("Enter the numerator of fraction %d: ", i+1);
-        scanf("%f", f[i].num);
+        scanf("%d", &f[i].num);
         printf("Enter the denominatorof fraction %d: ", i+1);
-        scanf("%f", f[i].denum);
+        scanf("%d", &f[i].denum);
     }
 }
 
@@ -56,7 +56,7 @@ Fraction addition(int n, Fraction *f)
     return sum;
 }
 
-void output(int n, Fraction *f, float sum)
+void output(int n, Fraction *f, Fraction sum)
 {
     for(int i=0; i<n-1; i++)
         printf("%d/%d + ", f[i].num, f[i].denum);
@@ -68,7 +68,7 @@ int main()
     int n= input_number_of_fractions();
     Fraction f[n];
     input_n_fractions(n, f);
-    float sum= addition(n, f);
+    Fraction sum= addition(n, f);
     output(n, f, sum);
     return 0;
 }
