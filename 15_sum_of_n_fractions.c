@@ -1,5 +1,13 @@
 #include<stdio.h>
 
+int gcd(int x, int y)
+{
+    if(y==0)
+        return x;
+    else
+        return gcd(y, x%y);
+}
+
 struct fraction
 {
     float num, denum;
@@ -26,26 +34,33 @@ void input_n_fractions(int n, Fraction *f)
     }
 }
 
+Fraction simplify_fraction(Fraction f)
+{
+    int divisor = gcd(f.num, f.denum);
+    f.num /= divisor;
+    f.denum /= divisor;
+    return f;
+}
+
 Fraction addition(int n, Fraction *f)
 {
     Fraction sum;
-    int lcm = (f[0].denum*f[1].denum)/gcd(f[0].denum, f[1].denum);
-    sum.denum=lcm;
-    sum.num = (f[0].num*lcm)/f[0].denum + (f[1].num*lcm)/f[1].denum;
+    sum.denum = f[0].denum*f[1].denum;
+    sum.num = f[0].num*f[1].denum + f[1].num*f[0].denum;
     for(int i=2; i<n; i++)
     {
-        lcm = (f[i].denum*sum.denum)/gcd(f[i].denum, sum.denum);
-        sum.denum = lcm;
-        sum.num = (f[i].num*lcm)/f[i].denum + (sum.sum*lcm)/sum.denum;
+        sum.num = f[i].num*sum.denum + sum.num*f[i].denum;
+        sum.denum = sum.denum*f[i].denum;
     }
+    simplify_fraction(sum);
     return sum;
 }
 
 void output(int n, Fraction *f, float sum)
 {
-    for(int i=0; i<n; i++)
-        printf("+ %d/%d ", f[i].num, f[i].denum);
-    printf(" = %d/%d\n", sum.num, sum.denum);
+    for(int i=0; i<n-1; i++)
+        printf("%d/%d + ", f[i].num, f[i].denum);
+    printf("%d/%d = %d/%d\n", f[n-1].num, f[n-1].denum, sum.num, sum.denum);
 }
 
 int main()
