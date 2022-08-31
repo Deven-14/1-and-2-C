@@ -10,7 +10,7 @@ int gcd(int x, int y)
 
 struct fraction
 {
-    float num, denum;
+    int num, denum;
 };
 
 typedef struct fraction Fraction;
@@ -28,9 +28,9 @@ void input_n_fractions(int n, Fraction *f)
     for(int i=0; i<n; i++)
     {
         printf("Enter the numerator of fraction %d: ", i+1);
-        scanf("%f", &f[i].num);
+        scanf("%f", f[i].num);
         printf("Enter the denominatorof fraction %d: ", i+1);
-        scanf("%f", &f[i].denum);
+        scanf("%f", f[i].denum);
     }
 }
 
