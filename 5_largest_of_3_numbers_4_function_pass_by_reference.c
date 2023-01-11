@@ -1,16 +1,16 @@
 #include <stdio.h>
 
-void input_number(int *num_ptr, int ith_num)
+void input_ith_number(int *num_ptr, int ith_num)
 {
     printf("Enter number %d to find the largest of 3 numbers: ", ith_num);
     scanf("%d", num_ptr);
 }
 
-void input_3_numbers()
+void input_3_numbers(int *num1, int *num2, int *num3)
 {
-    input_number(&num1, 1);
-    input_number(&num2, 2);
-    input_number(&num3, 3);
+    input_ith_number(num1, 1);
+    input_ith_number(num2, 2);
+    input_ith_number(num3, 3);
 }
 
 int max(int num1, int num2, int num3)
@@ -31,7 +31,7 @@ void output(int max_num)
 int main()
 {
     int num1, num2, num3, max_num;
-    input_3_numbers();
+    input_3_numbers(&num1, &num2, &num3);
     max_num = max(num1, num2, num3);
     output(max_num);
     return 0;
