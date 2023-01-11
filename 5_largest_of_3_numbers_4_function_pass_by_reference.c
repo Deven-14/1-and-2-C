@@ -6,6 +6,13 @@ void input_number(int *num_ptr, int ith_num)
     scanf("%d", num_ptr);
 }
 
+void input_3_numbers()
+{
+    input_number(&num1, 1);
+    input_number(&num2, 2);
+    input_number(&num3, 3);
+}
+
 int max(int num1, int num2, int num3)
 {
     if(num1>num2 && num1>num3)
@@ -24,9 +31,7 @@ void output(int max_num)
 int main()
 {
     int num1, num2, num3, max_num;
-    input_number(&num1, 1);
-    input_number(&num2, 2);
-    input_number(&num3, 3);
+    input_3_numbers();
     max_num = max(num1, num2, num3);
     output(max_num);
     return 0;
