@@ -1,13 +1,9 @@
 #include <stdio.h>
 
-void input_3_numbers(int *num1_ptr, int *num2_ptr, int *num3_ptr)
+void input_number(int *num_ptr, int ith_num)
 {
-    printf("Enter number 1 to find the largest of 3 numbers: ");
-    scanf("%d", num1_ptr);
-    printf("Enter number 2 to find the largest of 3 numbers: ");
-    scanf("%d", num2_ptr);
-    printf("Enter number 3 to find the largest of 3 numbers: ");
-    scanf("%d", num3_ptr);    
+    printf("Enter number %d to find the largest of 3 numbers: ", ith_num);
+    scanf("%d", num_ptr);
 }
 
 int max(int num1, int num2, int num3)
@@ -28,8 +24,10 @@ void output(int max_num)
 int main()
 {
     int num1, num2, num3, max_num;
-    input_3_numbers(&num1, &num2, &num3);
-    max_num=max(num1, num2, num3);
+    input_number(&num1, 1);
+    input_number(&num2, 2);
+    input_number(&num3, 3);
+    max_num = max(num1, num2, num3);
     output(max_num);
     return 0;
 }
