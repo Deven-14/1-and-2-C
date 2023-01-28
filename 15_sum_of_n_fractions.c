@@ -48,10 +48,9 @@ Fraction simplify_fraction(Fraction f)
 Fraction addition(int n, Fraction *numbers)
 {
     Fraction sum;
-    int i = 0;
     sum.num = numbers[0].num;
     sum.denum = numbers[0].denum;
-    for(i=1; i<n; i++)
+    for(int i=1; i<n; i++)
     {
         sum.num = numbers[i].num * sum.denum + sum.num * numbers[i].denum;
         sum.denum = sum.denum * numbers[i].denum;
