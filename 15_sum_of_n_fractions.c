@@ -1,8 +1,19 @@
 #include<stdio.h>
 
+int gcd(int x, int y)
+{
+    while(y!=0)
+    {
+        int rem = x%y;
+        x=y;
+        y=rem;
+    }
+    return x;
+}
+
 struct fraction
 {
-    float nume, deno;
+    int num, denum;
 };
 
 typedef struct fraction Fraction;
@@ -15,36 +26,52 @@ int input_number_of_fractions()
     return n;
 }
 
-void input_n_fractions(int n, Fraction *f)
+void input_n_fractions(int n, Fraction *numbers)
 {
     for(int i=0; i<n; i++)
     {
-        printf("Enter the numerator of fraction %d", i+1);
-        scanf("%f", &f[i].nume);
-        printf("Enter the denominatorof fraction %d", i+1);
-        scanf("%f", &f[i].deno);
+        printf("Enter the numerator of fraction %d: ", i+1);
+        scanf("%d", &numbers[i].num);
+        printf("Enter the denominator of fraction %d: ", i+1);
+        scanf("%d", &numbers[i].denum);
     }
 }
 
-float addition(int n, Fraction *f)
+Fraction simplify_fraction(Fraction f)
 {
-    float sum=0;
-    for(int j=0; j<n; j++)
-        sum+= f[j].nume/f[j].deno;
+    int divisor = gcd(f.num, f.denum);
+    f.num /= divisor;
+    f.denum /= divisor;
+    return f;
+}
+
+Fraction addition(int n, Fraction *numbers)
+{
+    Fraction sum;
+    sum.num = numbers[0].num;
+    sum.denum = numbers[0].denum;
+    for(int i=1; i<n; i++)
+    {
+        sum.num = numbers[i].num * sum.denum + sum.num * numbers[i].denum;
+        sum.denum = sum.denum * numbers[i].denum;
+    }
+    sum = simplify_fraction(sum);
     return sum;
 }
 
-void output(int n, float sum)
+void output(int n, Fraction *numbers, Fraction sum)
 {
-    printf("Sum of entered %d fractions is %f\n", n, sum);
+    for(int i=0; i<n-1; i++)
+        printf("%d/%d + ", numbers[i].num, numbers[i].denum);
+    printf("%d/%d = %d/%d\n", numbers[n-1].num, numbers[n-1].denum, sum.num, sum.denum);
 }
 
 int main()
 {
     int n= input_number_of_fractions();
-    Fraction f[n];
-    input_n_fractions(n, f);
-    float sum= addition(n, f);
-    output(n, sum);
+    Fraction numbers[n];
+    input_n_fractions(n, numbers);
+    Fraction sum= addition(n, numbers);
+    output(n, numbers, sum);
     return 0;
 }

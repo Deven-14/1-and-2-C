@@ -15,7 +15,10 @@ int sum_of_first_n_numbers(int nth_num)
 
 void output_sum(int nth_num, int sum)
 {
-    printf("Sum of numbers till %d is %d.\n", nth_num, sum);
+    printf("Sum of numbers: ");
+    for(int i=1; i<=nth_num; i++)
+        printf("+ %d ", i);
+    printf(" = %d", sum);
 }
 
 int main()
